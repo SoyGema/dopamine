@@ -17,7 +17,7 @@ DQNAgent.target_update_period = 8000  # agent steps
 DQNAgent.epsilon_train = 0.01
 DQNAgent.epsilon_eval = 0.001
 DQNAgent.epsilon_decay_period = 250000  # agent steps
-DQNAgent.tf_device = /cpu:* #'/gpu:0'  # use '/cpu:*' for non-GPU version
+DQNAgent.tf_device = '/cpu:4' #'/gpu:0'  # use '/cpu:*' for non-GPU version
 DQNAgent.optimizer = @tf.train.RMSPropOptimizer()
 
 tf.train.RMSPropOptimizer.learning_rate = 0.00025
@@ -30,8 +30,8 @@ Runner.game_name = 'Asteroids'
 # Sticky actions with probability 0.25, as suggested by (Machado et al., 2017).
 Runner.sticky_actions = True
 Runner.num_iterations = 200
-Runner.training_steps = 250000  # agent steps
-Runner.evaluation_steps = 125000  # agent steps
+Runner.training_steps = 2500  # agent steps
+Runner.evaluation_steps = 1250  # agent steps
 Runner.max_steps_per_episode = 27000  # agent steps
 
 WrappedReplayBuffer.replay_capacity = 1000000
